@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  monochart:
+  - apiVersion: v1
+    created: "2020-02-13T16:03:37.698685-03:00"
+    description: One Helm chart to rule them all
+    digest: 46f5d848b6cce22fe25fa9f67d8566c6c9b89d4817610cbc609cfc2be1b73376
+    name: monochart
+    urls:
+    - monochart-0.0.1.tgz
+    version: 0.0.1
+generated: "2020-02-13T16:03:37.697637-03:00"
