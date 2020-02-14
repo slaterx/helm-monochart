@@ -102,10 +102,10 @@ svc:
   enabled: false
   annotations: {}
   ports:
-    - name: https
-      port: 443
-      protocol: TCP
-      targetPort: 3000
+    - name: rendered_from_helmfile
+      port: rendered_from_helmfile
+      protocol: rendered_from_helmfile
+      targetPort: rendered_from_helmfile
 
 
 # Defaults: Cronjob
