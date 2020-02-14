@@ -15,7 +15,7 @@ metadata:
 {{/*{{- if .Values.svc.annotations }}{{- range $name, $value := .Values.svc.annotations }}{{- if not (empty $value) }}*/}}
 {{/*    {{ $name }}: {{ $value }}*/}}
 {{/*{{- end }}{{- end }}{{- end }}*/}}
-    {{ toYaml .Values.deployment.annotations | indent 4 }}
+    {{ toYaml .Values.svc.annotations | indent 4 }}
   labels:
 {{- if .Values.labels }}{{- range $name, $value := .Values.labels }}{{- if not (empty $value) }}
     {{ $name }}: {{ $value }}
