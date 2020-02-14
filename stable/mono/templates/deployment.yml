@@ -45,10 +45,10 @@ spec:
   template:
     metadata:
       annotations:
-{{- if .Values.pod.iam_role }}
+{{- if not eq .Values.pod.iam_role "false" }}
         iam.amazonaws.com/role: {{ .Values.pod.iam_role }}
 {{- end }}
-{{- if $enabled_istio }}
+{{- if eq $enabled_istio "true" }}
         sidecar.istio.io/inject: "{{ $enabled_istio }}"
 {{- end }}
       labels:

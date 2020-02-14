@@ -11,7 +11,7 @@ pod:
   enabled_port: false
 
   dnsPolicy: ClusterFirst
-  iam_role: rendered_from_helmfile
+  iam_role: false
   imagePullPolicy: IfNotPresent
   image_name: rendered_from_helmfile
   image_tag: rendered_from_helmfile
@@ -101,7 +101,11 @@ ing:
 svc:
   enabled: false
   annotations: {}
-  ports: {}
+  ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 3000
 
 
 # Defaults: Cronjob
