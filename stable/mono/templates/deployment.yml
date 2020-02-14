@@ -45,10 +45,9 @@ spec:
   template:
     metadata:
       annotations:
-{{/*{{- if .Values.deployment.annotations }}{{- range $name, $value := .Values.deployment.annotations }}{{- if not (empty $value) }}*/}}
-{{/*        {{ $name }}: {{ $value }}*/}}
-{{/*{{- end }}{{- end }}{{- end }}*/}}
-        {{ toYaml .Values.deployment.annotations | indent 8 }}
+{{- if .Values.deployment.annotations }}{{- range $name, $value := .Values.deployment.annotations }}{{- if not (empty $value) }}
+        {{ $name }}: {{ $value }}
+{{- end }}{{- end }}{{- end }}
 {{- if .Values.pod.iam_role }}
         iam.amazonaws.com/role: {{ .Values.pod.iam_role }}
 {{- end }}
@@ -73,6 +72,11 @@ spec:
 {{ toYaml $command.args | indent 8 }}
 {{- end }}
         env:
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
 {{- range $name, $value := .Values.pod.env }}{{- if not (empty $value) }}
         - name: {{ $name | quote }}
           value: {{ $value | quote }}
