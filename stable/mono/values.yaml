@@ -30,7 +30,7 @@ pod:
 
   securityContext: {}
 
-  env: renedered_from_helmfile
+  env: rendered_from_helmfile
 
   livenessProbeDisabled: false
   livenessProbe:
@@ -66,6 +66,10 @@ deployment:
   replicas: 3
   revisionHistoryLimit: 3
   progressDeadlineSeconds: 600
+  spec:
+    template:
+      metadata:
+        annotations: {}
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -96,6 +100,9 @@ ing:
 # Defaults: Service
 svc:
   enabled: false
+  annotations: {}
+  ports: {}
+
 
 # Defaults: Cronjob
 cronjob:
