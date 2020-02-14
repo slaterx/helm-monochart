@@ -100,13 +100,6 @@ ing:
 # Defaults: Service
 svc:
   enabled: false
-  annotations: {}
-  ports:
-    - name: rendered_from_helmfile
-      port: rendered_from_helmfile
-      protocol: rendered_from_helmfile
-      targetPort: rendered_from_helmfile
-
 
 # Defaults: Cronjob
 cronjob:
