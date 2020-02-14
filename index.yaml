@@ -3,11 +3,11 @@ entries:
   monochart:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-02-14T16:46:16.762095-03:00"
+    created: "2020-02-14T17:59:32.174123-03:00"
     description: One Helm chart to rule them all
-    digest: a8b8e245ebcfa6bf49eedaa7c24f8be03b8653c267f9c6eef03084d026a0b6f6
+    digest: e4fc1a100b9e0fcbb7b0bf502d74ec72eb8f7b93686dfadd19464d8abd9d0e96
     name: monochart
     urls:
     - https://raw.githubusercontent.com/slaterx/helm-monochart/master/monochart-0.1.0.tgz
     version: 0.1.0
-generated: "2020-02-14T16:46:16.761002-03:00"
+generated: "2020-02-14T17:59:32.172294-03:00"
