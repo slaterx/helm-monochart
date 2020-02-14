@@ -22,6 +22,7 @@ metadata:
     name: {{ .Values.name }}
 {{- end }}
 spec:
+  type: {{ .Values.svc.type }}
   ports:
 {{- range .Values.svc.ports }}
   - name: {{ .name }}
