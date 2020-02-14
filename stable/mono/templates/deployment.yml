@@ -45,15 +45,15 @@ spec:
   template:
     metadata:
       annotations:
-{{- if .Values.svc.annotations }}{{- range $name, $value := .Values.svc.annotations }}{{- if not (empty $value) }}
+{{- if .Values.deployment.annotations }}{{- range $name, $value := .Values.deployment.annotations }}{{- if not (empty $value) }}
         {{ $name }}: {{ $value }}
 {{- end }}{{- end }}{{- end }}
-{{/*{{- if .Values.pod.iam_role }}*/}}
-{{/*        iam.amazonaws.com/role: {{ .Values.pod.iam_role }}*/}}
-{{/*{{- end }}*/}}
-{{/*{{- if $enabled_istio }}*/}}
-{{/*        sidecar.istio.io/inject: "{{ $enabled_istio }}"*/}}
-{{/*{{- end }}*/}}
+{{- if .Values.pod.iam_role }}
+        iam.amazonaws.com/role: {{ .Values.pod.iam_role }}
+{{- end }}
+{{- if $enabled_istio }}
+        sidecar.istio.io/inject: "{{ $enabled_istio }}"
+{{- end }}
       labels:
 {{- if .Values.labels }}{{- range $name, $value := .Values.labels }}{{- if not (empty $value) }}
         {{ $name }}: {{ $value }}
