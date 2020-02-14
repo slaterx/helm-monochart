@@ -72,11 +72,6 @@ spec:
 {{ toYaml $command.args | indent 8 }}
 {{- end }}
         env:
-        - name: POD_NAMESPACE
-          valueFrom:
-            fieldRef:
-              apiVersion: v1
-              fieldPath: metadata.namespace
 {{- range $name, $value := .Values.pod.env }}{{- if not (empty $value) }}
         - name: {{ $name | quote }}
           value: {{ $value | quote }}
