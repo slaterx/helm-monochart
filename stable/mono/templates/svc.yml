@@ -28,7 +28,7 @@ spec:
     port: {{ .port }}
     protocol: {{ .protocol }}
     targetPort: {{ .targetPort }}
-{{ end }}{{ end }}
+{{- end }}{{- end }}
   selector:
 {{- if .Values.labels }}{{- range $name, $value := .Values.labels }}{{- if not (empty $value) }}
     {{ $name }}: {{ $value }}
