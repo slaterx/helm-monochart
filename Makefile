@@ -19,6 +19,7 @@ package:
     helm package stable/mono -d .
 
 publish:
+	make package
 	@echo "Updating index.yaml with generated binaries" && \
     helm repo index . --url ${REPO_URL}
 
