@@ -23,7 +23,7 @@ kind: Deployment
 metadata:
   labels:
 {{- if .Values.labels }}{{- range $name, $value := .Values.labels }}{{- if not (empty $value) }}
-    {{ $name }}: {{ $value }}
+    {{ $name }}: {{ $value | quote }}
 {{- end }}{{- end }}{{- else }}
     name: {{ .Values.name }}
 {{- end }}
@@ -46,7 +46,7 @@ spec:
     metadata:
       annotations:
 {{- if .Values.deployment.annotations }}{{- range $name, $value := .Values.deployment.annotations }}{{- if not (empty $value) }}
-        {{ $name }}: {{ $value }}
+        {{ $name }}: {{ $value | quote }}
 {{- end }}{{- end }}{{- end }}
 {{- if .Values.pod.iam_role }}
         iam.amazonaws.com/role: {{ .Values.pod.iam_role }}
